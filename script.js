@@ -1,14 +1,10 @@
-// api url
 const api_url = 
       "https://api.data.gov.sg/v1/environment/psi";
   
-// Defining async function
 async function getapi(url) {
     
-    // Storing response
     const response = await fetch(url);
     
-    // Storing data in form of JSON
     var data = await response.json();
     console.log(data);
     if (response) {
@@ -36,10 +32,8 @@ function show(data) {
           <th>South</th>
          </tr>`;
     
-    // Loop to access all rows 
     for (var r in data.items[0].readings) {
         if (!data.items[0].readings.hasOwnProperty(r)) {
-            //The current property is not a direct property of p
             continue;
         }
         tab += `<tr>
